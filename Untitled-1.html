@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accepting Scientific Number</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        input {
+            padding: 5px;
+            font-size: 16px;
+        }
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Accepting Scientific Number</h1>
+    <input type="text" id="inputString" placeholder="Masukkan angka ilmiah">
+    <div id="message">Yes, it is a number/No, it is not a number</div>
+
+    <script>
+        const inputString = document.getElementById('inputString');
+        const message = document.getElementById('message');
+
+        inputString.addEventListener('input', function() {
+            const value = this.value;
+            const isNumber = !isNaN(value) && isFinite(value);
+            message.textContent = isNumber ? 'Yes, it is a number' : 'No, it is not a number';
+        });
+    </script>
+</body>
+</html>
